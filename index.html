@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link type="text/css" rel="stylesheet" href="/node_modules/semantic-ui-css/semantic.min.css"><link>
+    </head>
+    <body class="container">
+        <article class="ui center aligned container">
+            <h2 class="ui header">Random Quote Generator</h2>
+            <div id="quote-generator" class="ui raised very padded text container segment">
+                <p>Welcome to my Random Quote Generator</p>
+                <generate-quote></generate-quote>
+                <my-component v-bind:quote="quote"></my-component>
+            </div>
+        </article>
+
+
+        <footer class="ui footer sticky segment">
+            <p>This was built to practice basic Vue and Semantic UI usage as well as sharpening my knowledge of build tools</p>
+        </footer>
+        <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="/node_modules/semantic-ui-css/semantic.min.js"></script>
+        <script src="/node_modules/vue/dist/vue.min.js"></script>
+        <script src="/node_modules/axios/dist/axios.min.js"></script>
+        <script src="src/js/main.js"></script>
+    </body>
+</html>
