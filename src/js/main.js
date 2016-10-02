@@ -8,9 +8,12 @@ let buttonComponent = {
     template: `<button id="generate" class="ui primary basic button" v-on:click="$parent.getQuotes">Click here to generate a quote</button>`
 }
 
-let Child = {
-    props: ['quote'],
-    template: `<div v-show="quote.text !== ''" class="ui padded segment quotes"><p>{{quote.text}}</p><p class="alignright">- {{quote.author}}</p></div>`
+let textComponent = {
+    template: `<div v-show="quote.text !== ''" class="ui padded segment quotes"><p>{{quote.text}}</p><p class="alignright" v-show="quote.author !== ''">- {{quote.author}}</p></div>`
+}
+
+let tweetButton = {
+    template: `<button v-show="quote.text !== ''" class="ui primary basic button" v-on:click="$parent.tweetQuote">Tweet This!</button>`
 }
 
 // const quoteGenerator = {
@@ -48,7 +51,8 @@ let vm = new Vue({
     },
     components: {
         'generate-quote': buttonComponent,
-        'my-component': Child
+        'quote-text': textComponent,
+        'tweet-btn' : tweetButton,
     },
     methods: {
         getQuotes: () => {
@@ -64,6 +68,10 @@ let vm = new Vue({
             }).fail(() => {
                 return 'There was an error with this request.'
             })
+        },
+        tweetQuote: () => {
+            let tweet = `${quote.text} - ${quote.author}`
+            window.open('https://twitter.com/intent/tweet?text=' + tweet);
         }
         // getQuotes: () => {
         //     var xhr = new XMLHttpRequest();
