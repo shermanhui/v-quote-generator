@@ -4,24 +4,44 @@
         <meta charset="utf-8">
         <title></title>
         <link type="text/css" rel="stylesheet" href="/node_modules/semantic-ui-css/semantic.min.css"><link>
+        <link rel="stylesheet" href="src/css/styles.css">
     </head>
-    <body class="container">
-        <article class="ui center aligned container">
-            <h2 class="ui header">Random Quote Generator</h2>
-            <div id="quote-generator" class="ui raised very padded text container segment">
-                <p>Welcome to my Random Quote Generator</p>
-                <generate-quote></generate-quote>
-                <my-component v-bind:quote="quote"></my-component>
-            </div>
-        </article>
+    <body>
+        <div class="application" id="quote-generator">
+            <menu class="ui menu">
+                <div class="header item">Quote Generator</div>
+                <div class="right menu">
+                    <a class="item" href="">About</a>
+                    <a class="item" href="">Generate a Quote</a>
+                </div>
+            </menu>
+            <article class="ui center aligned container content">
+                <div class="ui raised very padded text container segment">
+                    <h2 class="ui header">Random Quote Generator</h2>
+                    <p>Welcome to my Random Quote Generator</p>
+                    <generate-quote></generate-quote>
+                    <my-component v-bind:quote="quote"></my-component>
+                </div>
+            </article>
+            <!-- <menu class="ui menu">
+                <router-link class="header item" to="/">Quote Generator</router-link>
+                <div class="right menu">
+                    <router-link class="item" to="/about">About</router-link>
+                    <router-link class="item" to="/generate">Generate a Quote</router-link>
+                </div>
+            </menu>
+            <router-view></router-view> -->
 
 
-        <footer class="ui footer sticky segment">
-            <p>This was built to practice basic Vue and Semantic UI usage as well as sharpening my knowledge of build tools</p>
-        </footer>
+            <footer class="ui footer sticky segment" style="clear:both;">
+                <p class="alignleft">♥ from shui91</p>
+                <p class="alignright">Built with Vue and Semantic UI</p>
+            </footer>
+        </div>
         <script src="/node_modules/jquery/dist/jquery.min.js"></script>
         <script src="/node_modules/semantic-ui-css/semantic.min.js"></script>
         <script src="/node_modules/vue/dist/vue.min.js"></script>
+        <script src="/node_modules/vue-router/dist/vue-router.min.js"></script>
         <script src="/node_modules/axios/dist/axios.min.js"></script>
         <script src="src/js/main.js"></script>
     </body>

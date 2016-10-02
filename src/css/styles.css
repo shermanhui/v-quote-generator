@@ -1,3 +1,38 @@
-.container {
+.application {
+    display: -webkit-flex;
     display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+article {
+    flex: 1;
+    margin-top: 1em;
+}
+
+menu.menu {
+    margin-top: 0 !important;
+    padding-left: 0;
+}
+
+footer.footer {
+    margin-bottom: 0 !important;
+}
+
+.quotes {
+    margin-top: 0.8em;
+}
+
+.quotes p {
+    margin-bottom: 0.5em;
+}
+.footer.ui.segment {
+    padding-bottom: 0 !important;
+}
+.alignleft {
+    float: left;
+}
+
+.alignright {
+    float: right;
 }
